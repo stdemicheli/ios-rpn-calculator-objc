@@ -12,6 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface STDCalculator : NSObject
 
+typedef NS_ENUM(NSInteger, STDOperator) {
+    add, subtract, multiply, divide
+};
+- (void)pushNumber:(double)value;
+- (void)applyOperator:(STDOperator)operatr;
+- (void)clear;
+
+@property (nonatomic) double *topValue;
+
 @end
 
 NS_ASSUME_NONNULL_END

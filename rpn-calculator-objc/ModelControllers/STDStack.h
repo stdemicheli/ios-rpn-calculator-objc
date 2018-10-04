@@ -10,13 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface STDStack<T> : NSObject
+@interface STDStack : NSObject
 
 - (instancetype)initWith:(NSArray*)array;
 
-- (void)push:(T)value;
-- (void)pop;
-- (T)peek;
+- (void)push:(double)value;
+- (double)pop;
+- (double)peek;
 
 @end
 

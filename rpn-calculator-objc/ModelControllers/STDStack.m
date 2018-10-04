@@ -8,7 +8,7 @@
 
 #import "STDStack.h"
 
-@interface STDStack<T> ()
+@interface STDStack ()
 
 @property (nonatomic) NSMutableArray *values;
 
@@ -25,19 +25,21 @@
     return self;
 }
 
-- (void)push:(id)value
+- (void)push:(double)value
 {
-    [self.values addObject:value];
+    [self.values addObject:@(value)];
 }
 
-- (void)pop
+- (double)pop
 {
+    double lastObject = [[self.values lastObject] doubleValue];
     [self.values removeLastObject];
+    return lastObject;
 }
 
-- (id)peek
+- (double)peek
 {
-    return [self.values lastObject];
+    return [[self.values lastObject] doubleValue];
 }
 
 @end
